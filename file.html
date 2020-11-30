@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avatar</title>
+    <link rel="stylesheet" type="text/css" href="pic.css" media="screen"/>
+
+</head>
+<body>
+
+    <h1>This is the picture</h1>
+    <!--Importing image of the avatar which is located in the same path as code-->
+    <img class="avatar" src="avatar.jpg" alt="Avatar image">
+
+    <!--Creating Form-->
+    <form name="myForm" onsubmit="return validateForm()">
+        <label for="fname">First name:</label><br>
+        <input type="text" id="fname" name="fname"><br>
+        <label for="lname">Last name:</label><br>
+        <input type="text" id="lname" name="lname"><br>
+        <label for="email">Enter your email:</label><br>
+        <input type="email" id="email" name="email"> 
+        <input type="submit" value="Submit">
+    </form>
+
+    <script>
+    //creating a javascript function
+    function validateForm() {
+        var x = document.forms["myForm"]["fname"].value;//for storing first name
+        var y = document.forms["myForm"]["lname"].value;//for storing last name
+        var z = document.forms["myForm"]["email"].value;//for storing email
+
+        if (x == "") {//checking for the first name
+          alert("First Name must be filled out");
+          return false;
+        }
+        if (y == "") {//checking for the last name
+          alert("Last Name must be filled out");
+          return false;
+        } 
+        if (z == "") {//checking for email
+          alert("Email must be filled out");
+          return false;
+        }
+    }
+    </script>
+</body>
+</html>
